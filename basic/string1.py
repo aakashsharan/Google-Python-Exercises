@@ -24,8 +24,11 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
-  return
+
+  if(count < 10):
+    return 'Number of donuts: ' + str(count)
+  else:
+    return 'Number of donuts: many'
 
 
 # B. both_ends
@@ -34,8 +37,14 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-  # +++your code here+++
-  return
+
+  if(len(s)<2):
+    return ""
+  else:
+    s1 = s[0:2]
+    s2 = s[-2:]
+
+  return s1 + s2
 
 
 # C. fix_start
@@ -91,7 +100,7 @@ def main():
   test(both_ends('a'), '')
   test(both_ends('xyz'), 'xyyz')
 
-  
+
   print
   print 'fix_start'
   test(fix_start('babble'), 'ba**le')
